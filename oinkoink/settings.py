@@ -86,8 +86,12 @@ WSGI_APPLICATION = 'oinkoink.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd3lis117d3q6fq',
+        'HOST': 'ec2-54-158-232-223.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'wqawguiulpszwo',
+        'PASSWORD' : 'ddb9745db08e2114c792701598a10897840b63b898ff8158ac80b60c9f0b4a61'
     }
 }
 
