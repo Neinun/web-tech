@@ -20,7 +20,7 @@ from django.urls import path
 from django.contrib.auth import views
 
 from apps.conversation.views import conversations, conversation
-from apps.core.views import frontpage, signup
+from apps.core.views import index, signup
 from apps.feed.views import feed, search
 from apps.notification.views import notifications
 from apps.oinkerprofile.views import oinkerprofile, edit_profile, follow_oinker, unfollow_oinker, followers, follows
@@ -32,7 +32,8 @@ urlpatterns = [
     #
     #
 
-    path('', frontpage, name='frontpage'),
+    path('', index, name='index'),
+    path('index/', index, name='index'),
     path('signup/', signup, name='signup'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
     path('login/', views.LoginView.as_view(template_name='core/login.html'), name='login'),
