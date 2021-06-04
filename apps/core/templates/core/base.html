@@ -60,6 +60,13 @@
           </div>
         </div>
       </div>
+
+      <div>
+        {% for message in messages %}
+        <script> alert(' {{message}} ') </script>
+        {% endfor %}
+    </div>
+    
 </body>
 
 <footer class="container py-5">
