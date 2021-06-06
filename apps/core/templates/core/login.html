@@ -4,14 +4,13 @@
     <div class="container">
         <div class="columns">
             <div class="column is-12">
-                <h1 class="title">Log in</h1>
 
-                <form method="post" action=".">
+                <form method="post" action="." style="padding-left:400px;">
                     {% csrf_token %}
 
                     {{ form.as_p }}
 
-                    <button class="button is-success" type="submit">Log in</button>
+                    <button class="button is-dark" type="submit">Log in</button>
                 </form>
             </div>
         </div>
