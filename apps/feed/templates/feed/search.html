@@ -34,7 +34,7 @@
                     {% endif %}
                     
                     {% if oinkers %}
-                        <strong>Oinkers</strong>
+                        <strong>Users</strong>
 
                         {% for oinker in oinkers %}
                             <p><a href="{% url 'oinkerprofile' oinker.username %}">{{ oinker.username }}</a></p>
@@ -42,14 +42,14 @@
                     {% endif %}
 
                     {% if oinks %}
-                        <strong>Oinks</strong>
+                        <strong>Posts</strong>
 
                         <div class="wrapper-oinks">
                             {% for oink in oinks %}
                             <div class="oink">
                                 <article class="media">
                                     <figure class="media-left">
-                                        <p class="image is-64x64">
+                                        <p style="height: 64px; width: 64px;">
                                             {% if oink.created_by.oinkerprofile.avatar %}
                                                 <img src="{{ oink.created_by.oinkerprofile.avatar.url }}">
                                             {% endif %}

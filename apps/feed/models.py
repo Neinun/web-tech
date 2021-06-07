@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class Oink(models.Model):
     body = models.CharField(max_length=255)
+    # body_img = models.ImageField(upload_to='uploads/', blank=True, null=True)
 
     created_by = models.ForeignKey(User, related_name='oinks', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

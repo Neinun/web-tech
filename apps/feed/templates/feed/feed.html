@@ -10,9 +10,20 @@
                     <form v-on:submit.prevent="submitOink()">
                         <div class="field">
                             <div class="control">
-                                <textarea class="textarea" v-model="body" placeholder="What are you oinking?"></textarea>
+                                <textarea class="textarea" v-model="body" placeholder="What are you Thinking?"></textarea>
                             </div>
                         </div>
+                        <!-- <div class="field">
+
+                            <input type="file" v-model= "body_img" accept="image/png, image/jpeg">
+
+                            <!-- <form action="." method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{form.as_p}}
+                                <button type="submit" class="btn btn-lg btn-success">Upload</button> -->
+                                
+                            <!-- </form> -->
+                        <!-- </div> --> 
 
                         <div class="field">
                             <div class="control">
@@ -22,11 +33,14 @@
                     </form>
                 </div>
 
+                <br>
+                <br>
+                
                 <div class="wrapper-oinks">
                     <div class="oink" v-for="oink in oinks">
                         <article class="media">
                             <figure class="media-left">
-                                <p class="image is-64x64">
+                                <p style="height: 64px; width: 64px;">
                                     <img :src="oink.avatar">
                                 </p>
                             </figure>
@@ -37,6 +51,8 @@
                                         <strong>[[ oink.oinker ]]</strong>
                                         <small>[[ oink.created_at ]]</small>
                                         <br>
+                                        <!-- [[ oink.body_img ]]
+                                        <br> -->
                                         [[ oink.body ]]
                                     </p>
                                 </div>
@@ -48,7 +64,7 @@
                         <div class="oink">
                             <article class="media">
                                 <figure class="media-left">
-                                    <p class="image is-64x64">
+                                    <p style="width: 64px; height: 64px;">
                                         {% if oink.created_by.oinkerprofile.avatar %}
                                             <img src="{{ oink.created_by.oinkerprofile.avatar.url }}">
                                         {% endif %}
@@ -87,6 +103,7 @@
             return {
                 oinks: [],
                 body: '',
+                // body_img: '',
                 oinker: '{{ request.user.username }}',
                 created_at: 'Now',
                 avatar: '{% if request.user.oinkerprofile.avatar %}{{ request.user.oinkerprofile.avatar.url }}{% endif %}',
@@ -127,6 +144,7 @@
                 if (this.body.length > 0) {
                     var oink = {
                         'body': this.body,
+                        // 'body_img': ths.body_img,
                         'oinker': this.oinker,
                         'created_at': this.created_at,
                         'avatar': this.avatar

@@ -9,7 +9,7 @@
                 <h1 class="title">{{ user.username }}</h1>
 
                 {% if user.oinkerprofile.avatar %}
-                    <figure class="image is-128x128">
+                    <figure style="width : 256px; height: 256px;">
                         <img src="{{ user.oinkerprofile.avatar.url }}">
                     </figure>
                 {% endif %}
@@ -38,7 +38,7 @@
                         <div class="oink">
                             <article class="media">
                                 <figure class="media-left">
-                                    <p class="image is-64x64">
+                                    <p style="height: 64px; width: 64px;">
                                         {% if user.oinkerprofile.avatar %}
                                             <img src="{{ user.oinkerprofile.avatar.url }}">
                                         {% endif %}

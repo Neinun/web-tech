@@ -13,7 +13,7 @@
                         <div class="oink">
                             <article class="media">
                                 <figure class="media-left">
-                                    <p class="image is-64x64">
+                                    <p style="height: 64px; width: 64px;">
                                         {% if message.created_by.oinkerprofile.avatar %}
                                             <img src="{{ message.created_by.oinkerprofile.avatar.url }}">
                                         {% endif %}
@@ -36,7 +36,7 @@
                     <div class="oink" v-for="message in messages">
                         <article class="media">
                             <figure class="media-left">
-                                <p class="image is-64x64">
+                                <p style="height: 64px; width: 64px;">
                                     <img :src="message.avatar">
                                 </p>
                             </figure>
