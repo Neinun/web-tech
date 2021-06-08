@@ -13,17 +13,6 @@
                                 <textarea class="textarea" v-model="body" placeholder="What are you Thinking?"></textarea>
                             </div>
                         </div>
-                        <!-- <div class="field">
-
-                            <input type="file" v-model= "body_img" accept="image/png, image/jpeg">
-
-                            <!-- <form action="." method="post" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                {{form.as_p}}
-                                <button type="submit" class="btn btn-lg btn-success">Upload</button> -->
-                                
-                            <!-- </form> -->
-                        <!-- </div> --> 
 
                         <div class="field">
                             <div class="control">
@@ -51,8 +40,6 @@
                                         <strong>[[ oink.oinker ]]</strong>
                                         <small>[[ oink.created_at ]]</small>
                                         <br>
-                                        <!-- [[ oink.body_img ]]
-                                        <br> -->
                                         [[ oink.body ]]
                                     </p>
                                 </div>
@@ -103,7 +90,6 @@
             return {
                 oinks: [],
                 body: '',
-                // body_img: '',
                 oinker: '{{ request.user.username }}',
                 created_at: 'Now',
                 avatar: '{% if request.user.oinkerprofile.avatar %}{{ request.user.oinkerprofile.avatar.url }}{% endif %}',
